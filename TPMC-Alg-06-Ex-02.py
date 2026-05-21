@@ -6,4 +6,6 @@ while True:
     y.append(x)
     
 y.reverse()
-print (f"Sua lista em ordem crescente é {y}")
+print("Resultado:")
+for valor in y:
+    print (valor)
