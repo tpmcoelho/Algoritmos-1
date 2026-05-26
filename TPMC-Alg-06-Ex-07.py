@@ -12,9 +12,9 @@ def numero_perfeito(a, b):
         return False
 
 def main():
-    x = int(input("Digite um número para saber seus divisores:\n"))
-    print (f"Os divisores de {x} são: {divisores(x)}")
-    y = divisores(x)
-    print (numero_perfeito(x, y))
-        
+    for x in range(1, 10001):
+        y = divisores(x)
+        if numero_perfeito(x, y):
+            print(f"{x} é perfeito.")
+
 main()
