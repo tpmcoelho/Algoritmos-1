@@ -1,47 +1,47 @@
-def tokenizar(expressao):
+def tokenizar(x):
     tokens = []
-    numero = ""
+    y = ""
     i = 0
 
-    while i < len(expressao):
-        c = expressao[i]
+    while i < len(x):
+        c = x[i]
 
         if c == " ":
             i += 1
             continue
 
         elif c in "*/()":
-            if numero != "":
-                tokens.append(numero)
-                numero = ""
+            if y != "":
+                tokens.append(y)
+                y = ""
             tokens.append(c)
 
         elif c in "+-":
             j = i - 1
 
-            while j >= 0 and expressao[j] == " ":
+            while j >= 0 and x[j] == " ":
                 j -= 1
 
-            if j >= 0 and (expressao[j].isdigit() or expressao[j] == ')'):
-                if numero != "":
-                    tokens.append(numero)
-                    numero = ""
+            if j >= 0 and (x[j].isdigit() or x[j] == ')'):
+                if y != "":
+                    tokens.append(y)
+                    y = ""
                 tokens.append(c)
             else:
-                numero += c
+                y += c
 
         else:
-            numero += c
+            y += c
 
         i += 1
 
-    if numero != "":
-        tokens.append(numero)
+    if y != "":
+        tokens.append(y)
 
     return tokens
 
 def main():
-    expressao = input("Digite uma expressão matemática: ")
-    print(tokenizar(expressao))
+    a = input("Digite uma expressão matemática: ")
+    print(tokenizar(a))
 
 main()
