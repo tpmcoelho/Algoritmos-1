@@ -1,0 +1,5 @@
+x = input("Digite algo:\n")
+y = input("Digite algo:\n")
+x = set(x.lower())
+y = set(y.lower())
+print (x==y)
